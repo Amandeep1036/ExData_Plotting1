@@ -2,7 +2,7 @@ read_data <- "household_power_consumption.txt"
 data <- read.table(read_data, header=TRUE, sep=";", stringsAsFactors=FALSE, dec=".")
 sub_data <- data[data$Date %in% c("1/2/2007","2/2/2007") ,]
 datetime <- strptime(paste(sub_data$Date, sub_data$Time, sep=" "), "%d/%m/%Y %H:%M:%S") 
-global_active_power <- as.numeric(subSetData$Global_active_power)
+global_active_power <- as.numeric(sub_data$Global_active_power)
 subMetering_1 <- as.numeric(sub_data$Sub_metering_1)
 subMetering_2 <- as.numeric(sub_data$Sub_metering_2)
 subMetering_3 <- as.numeric(sub_data$Sub_metering_3)
